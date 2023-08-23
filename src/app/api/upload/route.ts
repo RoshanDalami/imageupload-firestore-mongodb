@@ -27,7 +27,7 @@ export async function GET() {
   try {
     const response = await Images.find({}, { __v: 0 });
     return NextResponse.json(response);
-  } catch (error) {
-    return NextResponse.json(error)
+  } catch (error:any) {
+    return NextResponse.json({error:error.message})
   }
 }
